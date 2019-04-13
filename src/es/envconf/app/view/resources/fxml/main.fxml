@@ -1,14 +1,123 @@
-<?import javafx.scene.text.*?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane fx:controller="es.envconf.app.controller.MainController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button layoutX="290.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Botón" onAction="#handleSubmitButtonAction"/>
-    </HBox>
-    <Text fx:id="actiontarget" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-</GridPane>
-
-
-
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="752.0" stylesheets="@../css/darkTheme.css" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <Menu mnemonicParsing="false" text="Nuevo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Importar" />
+                        <MenuItem mnemonicParsing="false" text="Exportar" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferencias" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Salir" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Test">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Entornos" />
+                        <MenuItem mnemonicParsing="false" text="JBoss" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="538.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+            <children>
+                <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="43.0" prefHeight="244.0" prefWidth="135.0">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="141.0" />
+                    </content>
+                </ScrollPane>
+                <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="331.0" prefHeight="118.0" prefWidth="135.0">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="141.0" />
+                    </content>
+                </ScrollPane>
+                <Label layoutX="268.0" layoutY="50.0" text="Entorno" textAlignment="RIGHT">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="281.0" layoutY="100.0" text="Rama">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="249.0" layoutY="125.0" text="Puerto APP">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="238.0" layoutY="150.0" text="Puerto Debug">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="254.0" layoutY="175.0" text="Usuario BD">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="290.0" layoutY="225.0" text="Host">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="244.0" layoutY="200.0" text="Password BD">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="260.0" layoutY="250.0" text="Puerto BD">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="241.0" layoutY="275.0" text="Service Name">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="301.0" layoutY="75.0" prefHeight="17.0" prefWidth="18.0" text="ID">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Button layoutX="290.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Configurar" />
+                <Label layoutX="47.0" layoutY="20.0" text="Entornos">
+                    <font>
+                        <Font name="Arial Black" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="47.0" layoutY="306.0" text="JBoss">
+                    <font>
+                        <Font name="Arial Black" size="13.0" />
+                    </font>
+                </Label>
+                <CheckBox layoutX="315.0" layoutY="374.0" mnemonicParsing="false" selected="true" styleClass="checkBox" text="Configuración completa" />
+                <CheckBox layoutX="340.0" layoutY="407.0" mnemonicParsing="false" styleClass="checkBox" text="Configurar entorno" />
+                <CheckBox layoutX="340.0" layoutY="438.0" mnemonicParsing="false" styleClass="checkBox" text="Configurar JBoss" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
