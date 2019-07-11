@@ -1,9 +1,13 @@
 package es.envconf.app.model.dto;
 
+import javafx.beans.property.SimpleStringProperty;
+
+import java.io.Serializable;
 import java.lang.reflect.Field;
 
-public class EnvironmentDTO {
+public class EnvironmentDTO implements Serializable {
 
+    private SimpleStringProperty propertyName = new SimpleStringProperty();
     private String project;
     private String branch;
     private String portApp;
@@ -18,6 +22,18 @@ public class EnvironmentDTO {
 
 
     public EnvironmentDTO(){}
+
+    public String getPropertyName() {
+        return propertyName.get();
+    }
+
+    public SimpleStringProperty propertyNameProperty() {
+        return propertyName;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName.set(propertyName);
+    }
 
     /**
      * @return the project
@@ -194,5 +210,10 @@ public class EnvironmentDTO {
         }
 
         return validationResult;
+    }
+
+    @Override
+    public String toString() {
+        return  propertyName.getValue() ;
     }
 }

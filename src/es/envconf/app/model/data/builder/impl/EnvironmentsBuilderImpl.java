@@ -62,7 +62,8 @@ public class EnvironmentsBuilderImpl implements EnvironmentsBuilder {
     public EnvironmentDTO build(Environment environment) {
         _illegalArgumentExceptionSiObjetoNulo(environment, EnvironmentDTO.class);
         
-        EnvironmentDTO environmentDTO = new EnvironmentDTO();   
+        EnvironmentDTO environmentDTO = new EnvironmentDTO();
+        environmentDTO.setPropertyName( environment.getProject());
         environmentDTO.setProject     ( environment.getProject());
         environmentDTO.setBranch      ( environment.getBranch());
         environmentDTO.setPortApp     ( environment.getPortApp());

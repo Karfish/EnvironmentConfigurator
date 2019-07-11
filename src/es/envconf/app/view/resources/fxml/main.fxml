@@ -3,18 +3,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="752.0" stylesheets="@../css/darkTheme.css" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="752.0" stylesheets="@../css/darkTheme.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.envconf.app.controller.MainController">
     <children>
-        <MenuBar VBox.vgrow="NEVER">
+        <MenuBar id="menuBar" fx:id="menuBar" VBox.vgrow="NEVER">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -41,18 +41,8 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="538.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="610.0" prefWidth="752.0" VBox.vgrow="ALWAYS">
             <children>
-                <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="43.0" prefHeight="244.0" prefWidth="135.0">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="141.0" />
-                    </content>
-                </ScrollPane>
-                <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="331.0" prefHeight="118.0" prefWidth="135.0">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="141.0" />
-                    </content>
-                </ScrollPane>
                 <Label layoutX="268.0" layoutY="50.0" text="Entorno" textAlignment="RIGHT">
                     <font>
                         <Font name="System Bold" size="12.0" />
@@ -109,7 +99,7 @@
                         <Font name="Arial Black" size="13.0" />
                     </font>
                 </Label>
-                <Label layoutX="47.0" layoutY="306.0" text="JBoss">
+                <Label fx:id="jBoss" layoutX="47.0" layoutY="306.0" text="JBoss">
                     <font>
                         <Font name="Arial Black" size="13.0" />
                     </font>
@@ -117,6 +107,18 @@
                 <CheckBox layoutX="315.0" layoutY="374.0" mnemonicParsing="false" selected="true" styleClass="checkBox" text="Configuración completa" />
                 <CheckBox layoutX="340.0" layoutY="407.0" mnemonicParsing="false" styleClass="checkBox" text="Configurar entorno" />
                 <CheckBox layoutX="340.0" layoutY="438.0" mnemonicParsing="false" styleClass="checkBox" text="Configurar JBoss" />
+            <Label id="lbEntorno" fx:id="lbEntorno" layoutX="340.0" layoutY="50.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbID" fx:id="lbID" layoutX="340.0" layoutY="75.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbRama" fx:id="lbRama" layoutX="340.0" layoutY="100.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbApp" fx:id="lbApp" layoutX="340.0" layoutY="125.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbDebug" fx:id="lbDebug" layoutX="341.0" layoutY="150.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbUserBD" fx:id="lbUserBD" layoutX="341.0" layoutY="175.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbPass" fx:id="lbPass" layoutX="341.0" layoutY="200.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbHost" fx:id="lbHost" layoutX="341.0" layoutY="225.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbPortBD" fx:id="lbPortBD" layoutX="340.0" layoutY="250.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <Label id="lbServName" fx:id="lbServName" layoutX="340.0" layoutY="275.0" prefHeight="21.0" prefWidth="395.0" text="..." />
+            <ListView id="listEnvironments" fx:id="listEnvironments" layoutX="13.0" layoutY="50.0" prefHeight="249.0" prefWidth="138.0" />
+            <ListView id="listJboss" layoutX="14.0" layoutY="335.0" prefHeight="136.0" prefWidth="138.0" />
             </children>
         </AnchorPane>
     </children>
