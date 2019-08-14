@@ -1,5 +1,6 @@
 package es.envconf.app.view;
 
+import es.envconf.app.controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,11 +12,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("resources/fxml/main.fxml"));
+        Parent root = fxmlLoader.load();
         primaryStage.setTitle("Configurador de entornos");
         primaryStage.setScene(new Scene(root, 750, 500));
         Image image = new Image("file:./src/es/envconf/app/view/resources/images/iconoApp.gif");
         primaryStage.getIcons().add(image);
+        MainController mainController = (MainController) fxmlLoader.getController();
+        mainController.init();
         primaryStage.show();
     }
 
