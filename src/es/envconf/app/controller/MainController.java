@@ -1,5 +1,6 @@
 package es.envconf.app.controller;
 
+import es.envconf.app.model.applicationServer.jboss.JBossVersion;
 import es.envconf.app.model.dto.EnvironmentDTO;
 import es.envconf.app.model.service.EnvironmentsService;
 import es.envconf.app.model.service.exception.EnvironmentException;
@@ -32,6 +33,9 @@ public class MainController {
     @FXML
     private ListView<EnvironmentDTO> listEnvironments;
 
+    @FXML
+    private ListView<String> listApplicationServers;
+
     private List<EnvironmentDTO> listEnvironmentDTO;
 
     public void init(){
@@ -43,10 +47,16 @@ public class MainController {
                 listEnvironmentDTO = new ArrayList<>();
                 listEnvironmentDTO.addAll(environmentsDTO);
                 _setearInformacionEntorno(environmentsDTO.get(0));
-                ObservableList<EnvironmentDTO> items = FXCollections.observableArrayList();
-                items.setAll(environmentsDTO);
-                listEnvironments.setItems(items);
+                ObservableList<EnvironmentDTO> itemsEnvironments = FXCollections.observableArrayList();
+                itemsEnvironments.setAll(environmentsDTO);
+                listEnvironments.setItems(itemsEnvironments);
             }
+
+            List<String> jbossVersionNames = JBossVersion.getVersionNames();
+            ObservableList<String> itemsAppServer = FXCollections.observableArrayList();
+            itemsAppServer.setAll(jbossVersionNames);
+            listApplicationServers.setItems(itemsAppServer);
+
             defineEventListener();
         } catch (EnvironmentException e) {
             e.printStackTrace();
